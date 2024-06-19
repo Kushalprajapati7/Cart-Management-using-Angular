@@ -1,0 +1,61 @@
+/* src/app/components/order/order.component.scss */
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 14px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .order-summary {
+    margin-bottom: 20px;
+  }
+  
+  .order-items {
+    h2 {
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+  
+    .product-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  
+    .product-details {
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+  
+
+  .backToProducts{
+    width: 146px;
+    margin-top: 14px;
+    margin-left: 221px;
+    margin-right: auto;
+  
+    .btn-products {
+      color: white;
+    }
+  }

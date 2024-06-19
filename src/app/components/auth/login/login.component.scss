@@ -1,0 +1,105 @@
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$text-color: #333;
+$border-radius: 5px;
+
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("https://www.zdnet.com/a/img/resize/4031321146ad6df3889674fe60f557d95966fc0e/2019/09/05/7c148e17-3f7e-4166-b755-324799ba0c7a/atanas-malamov-tpmav6c33de-unsplash.jpg?auto=webp&width=1280")
+    no-repeat center center/cover;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .login-form-container {
+    position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1;
+
+    h1 {
+      color: $secondary-color;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $text-color;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid lighten($secondary-color, 20%);
+        border-radius: $border-radius;
+        font-size: 1rem;
+        color: $text-color;
+
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 5px rgba($primary-color, 0.5);
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba($primary-color, 0.5);
+      }
+    }
+
+    .signup-link-container {
+      text-align: center;
+      margin-top: 1rem;
+
+      p {
+        color: $text-color;
+        font-size: 0.9rem;
+
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

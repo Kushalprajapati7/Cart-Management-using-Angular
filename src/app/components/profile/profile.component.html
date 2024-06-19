@@ -1,0 +1,75 @@
+<app-navabar></app-navabar>
+<div class="container mt-5 profile-page">
+    <h1 class="text-center mb-4">Profile Page</h1>
+    <p class="text-center mb-5">View and manage your profiles.</p>
+  
+    <!-- Form to create new profile -->
+    <form (ngSubmit)="OnSubmitProfile()" class="profile-form mb-5">
+        <h2 class="mb-4">Create Profile</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="profileForm.name" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="profileForm.email" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" [(ngModel)]="profileForm.dob" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" [(ngModel)]="profileForm.gender" class="form-control" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit Profile Data</button>
+    </form>
+  
+    <!-- Display list of profiles -->
+    <div class="profile-list">
+        <h2 class="mb-4">Profile List</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Actions</th>
+                        <th>Cart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let profile of profiles">
+                        <td>{{ profile.name }}</td>
+                        <td>{{ profile.email }}</td>
+                        <td>{{ profile.dob | date }}</td>
+                        <td>{{ profile.gender }}</td>
+                        <td class="actions">
+                            <button class="btn btn-primary btn-sm" (click)="OnUpdateProfile(profile)">Edit</button>
+                            <button class="btn btn-danger btn-sm ml-2" (click)="OndeletProfile(profile)">Delete</button>
+                        </td>
+                        <td class="text-center cart">
+                            <button class="btn btn-info btn-sm" (click)="VisitProduts(profile)">Cart</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

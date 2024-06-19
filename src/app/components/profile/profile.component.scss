@@ -1,0 +1,163 @@
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$background-color: #ecf0f1;
+$text-color: #333;
+$border-color: #ddd;
+$hover-color: #f1f1f1;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-page {
+  max-width: 75%;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  h1 {
+    font-size: 2.5rem;
+    color: $secondary-color;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $text-color;
+  }
+
+  .profile-form {
+    background-color: $background-color;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        font-weight: bold;
+        color: $text-color;
+      }
+
+      .form-control {
+        border: 1px solid $border-color;
+        padding: 0.75rem;
+        border-radius: 4px;
+
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+        }
+      }
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+
+      &.btn-primary {
+        background-color: $primary-color;
+        border: none;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+
+  .profile-list {
+    h2 {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      th,
+      td {
+        text-align: left;
+        padding: 0.75rem;
+        border: 1px solid $border-color;
+      }
+
+      th {
+        background-color: $primary-color;
+        color: #fff;
+      }
+
+      tbody tr {
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn {
+          &.btn-primary {
+            background-color: $primary-color;
+            border: none;
+
+            &:hover {
+              background-color: darken($primary-color, 10%);
+            }
+          }
+
+          &.btn-danger {
+            background-color: #e74c3c;
+            border: none;
+
+            &:hover {
+              background-color: darken(#e74c3c, 10%);
+            }
+          }
+
+          &.btn-info {
+            background-color: #3498db;
+            border: none;
+
+            &:hover {
+              background-color: darken(#3498db, 10%);
+            }
+          }
+
+          &.ml-2 {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+
+      .cart{
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+
+        .btn{
+          color: white;
+        }
+
+      }
+    }
+  }
+}

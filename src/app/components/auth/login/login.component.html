@@ -1,0 +1,27 @@
+<div class="login-container">
+    <div class="overlay"></div>
+    <div class="login-form-container">
+        <h1 class="text-center mb-4">Login</h1>
+        <form (ngSubmit)="onLogin(email.value, password.value, role.value)">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" #email required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" #password required>
+            </div>
+            <div class="form-group mb-4">
+                <label for="role">Role</label>
+                <select class="form-control" id="role" #role required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <div class="signup-link-container">
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        </div>
+    </div>
+</div>

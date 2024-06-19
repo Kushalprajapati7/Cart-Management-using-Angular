@@ -1,0 +1,87 @@
+// Variables for easy theming
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$background-color: #ecf0f1;
+$text-color: #333;
+$border-radius: 5px;
+
+// Background image URL
+$background-image-url: 'https://media.istockphoto.com/id/1351763219/photo/crystal-cove-state-park-sky-fire.webp?b=1&s=170667a&w=0&k=20&c=mJEFZ68eUauueOHxlGRbBQZ-F0J-FwMXLWGqs5a0LAk=';
+
+// Container and form styling
+.signup-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Adjust as needed
+    background: url($background-image-url) no-repeat center center/cover;
+    background-size: cover;
+    padding: 4rem 0; // Adjust padding as needed
+
+    .container {
+        background: rgba(255, 255, 255, 0.9); // Semi-transparent white background
+        padding: 2rem;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+
+        h1 {
+            color: $secondary-color;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: $text-color;
+                font-weight: 600;
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid lighten($secondary-color, 20%);
+                border-radius: $border-radius;
+                font-size: 1rem;
+                color: $text-color;
+
+                &:focus {
+                    border-color: $primary-color;
+                    box-shadow: 0 0 5px rgba($primary-color, 0.5);
+                }
+            }
+
+            select.form-control {
+                appearance: none; // Remove default select styling
+            }
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: $primary-color;
+            color: white;
+            border: none;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+                background: darken($primary-color, 10%);
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 5px rgba($primary-color, 0.5);
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<app-navabar></app-navabar>
+  <div class="showCartButton">
+
+    <button class="btn btn-info btn-show-cart" type="button" (click)="showCart()">Show My Cart</button>
+  </div>
+
+<div class="container mt-3 mb-0">
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center mb-4">List Of All Products</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let product of products">
+      <div class="card product-card">
+        <img [src]="product.imageUrl" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">Price: ₹{{ product.price }}</p>
+          <p class="card-text">{{ product.description }}</p>
+          <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-between">
+            <div class="form-group mb-3 mb-md-0 me-md-3 quantity-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity(product)">-</button>
+                </div>
+                <input type="number" class="form-control text-center" id="quantity{{product.id}}"
+                  [(ngModel)]="product.quantity" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity(product)">+</button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-add-cart" type="button" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
